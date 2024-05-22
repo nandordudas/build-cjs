@@ -1,0 +1,19 @@
+{
+  "name": "playground",
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.1.2",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon -r dotenv/config ./src/index.ts",
+    "test": "npx tsx watch ./src/test.ts"
+  },
+  "dependencies": {
+    "workspace": "link:.."
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}

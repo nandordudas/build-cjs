@@ -1,0 +1,36 @@
+{
+  "name": "workspace",
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.1.2",
+  "private": true,
+  "scripts": {
+    "build:code": "tsc",
+    "build:types": "tsc --declaration --emitDeclarationOnly",
+    "build": "pnpm run \"/build:/\"",
+    "prebuild": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./bar": {
+      "require": "./dist/bar.js",
+      "types": "./dist/bar.d.ts"
+    },
+    "./foo": {
+      "require": "./dist/foo.js",
+      "types": "./dist/foo.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  }
+}
